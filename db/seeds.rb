@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+quotes_data = SmarterCSV.process('./quotes.csv')
+quotes_data.each do |q|
+  title = q[:title]
+  author = q[:author]
+  return if title.blank?
+
+  Quote.create_with(author: author).find_or_create_by!(title: title)
+end
