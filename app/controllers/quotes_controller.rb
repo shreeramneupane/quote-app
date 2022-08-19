@@ -1,5 +1,5 @@
 class QuotesController < ApplicationController
   def random
-    @quote = Quote.select(:author, :title).take
+    @quote = Quote.random
   end
 end

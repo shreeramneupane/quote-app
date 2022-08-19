@@ -11,3 +11,7 @@
 - And If necessary, change db access attributes
 - Run command `rails db:setup` to create and seed data
 - run test cases with command `rspec`
+
+## Randomization
+- Postgres `RANDOM()` method provides a random record [https://www.postgresql.org/docs/9/functions-math.html]
+- This method samples whole dataset, so if dataset starts growing then it is important to use `TABLESAMPLE SYSTEM_ROWS` also
