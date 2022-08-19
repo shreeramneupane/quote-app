@@ -48,6 +48,8 @@ gem "bootsnap", require: false
 # Provides various handy CSV functionality [https://github.com/tilo/smarter_csv]
 gem 'smarter_csv', '~> 1.7.1'
 
+gem 'pry'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -73,4 +75,6 @@ end
 group :test do
   # Provides handy matchers [https://github.com/thoughtbot/shoulda-matchers]
   gem 'shoulda-matchers', '~> 5.0'
+  # Utility for controller testing [https://github.com/rails/rails-controller-testing]
+  gem 'rails-controller-testing', '~> 1.0.5'
 end

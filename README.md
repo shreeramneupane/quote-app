@@ -10,4 +10,4 @@
 - Copy the database.yml.sample to database.yml `cp database.sample.yml database.yml`
 - And If necessary, change db access attributes
 - Run command `rails db:setup` to create and seed data
-
+- run test cases with command `rspec`

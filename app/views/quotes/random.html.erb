@@ -1,0 +1,6 @@
+<%- if @quote.present? %>
+  <h1><%= @quote.title.html_safe %></h1>
+  <p><%= @quote.author %></p>
+<%- else %>
+  <p>No quote</p>
+<% end %>
