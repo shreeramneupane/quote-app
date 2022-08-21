@@ -1,6 +1,26 @@
-<%- if @quote.present? %>
-  <h1><%= @quote.title.html_safe %></h1>
-  <p><%= @quote.author %></p>
-<%- else %>
-  <p>No quote</p>
-<% end %>
+<section class="vh-100 bg-secondary">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-xl-10">
+        <%- if @quote.present? %>
+          <div class="card">
+            <div class="card-body py-5">
+              <div class="d-flex">
+                <div class="flex-grow-1 ms-4 ps-3">
+                  <blockquote>
+                    <h1 class="blockquote mb-4 font-italic"><%= @quote.title.html_safe %></h1>
+                    <footer>- <cite title="Author"><%= @quote.author %></cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        <%- else %>
+          <p class="text-center text-warning text-uppercase font-weight-bold">
+            No quote
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
