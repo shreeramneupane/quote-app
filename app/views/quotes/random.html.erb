@@ -9,7 +9,9 @@
                 <div class="flex-grow-1 ms-4 ps-3">
                   <blockquote>
                     <h1 class="blockquote mb-4 font-italic"><%= @quote.title.html_safe %></h1>
-                    <footer>- <cite title="Author"><%= @quote.author %></cite></footer>
+                    <% if @quote.author.present? %>
+                      <footer> - <cite title="Author"><%= @quote.author %></cite></footer>
+                    <% end %>
                   </blockquote>
                 </div>
               </div>
