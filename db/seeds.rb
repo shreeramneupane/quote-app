@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-quotes_data = SmarterCSV.process('./quotes.csv')
-quotes_data.each do |q|
-  title = q[:title]
-  author = q[:author]
-  return if title.blank?
+require 'csv'
+quotes_data = CSV.read("quotes.csv")
+quotes_data.shift
+parser = QuoteParser.new
 
-  Quote.create_with(author: author).find_or_create_by!(title: title)
+quotes_data.each do |q|
+  raw = q[0]
+  puts raw
+  parsed = parser.parse(raw: raw)
+
+  Quote.create_with(author: parsed.author).find_or_create_by!(title: parsed.title)
 end
